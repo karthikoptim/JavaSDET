@@ -15,14 +15,14 @@ public class HellowWorld {
 	 WebDriver driver;
 
 	    @BeforeClass
-	    public void setup() {
+	    public void setup() throws InterruptedException {
 	        // Set ChromeDriver path if not added to system PATH
 	        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
 	        driver = new ChromeDriver();
 	        driver.manage().window().maximize();
 	        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
+	        Thread.sleep(10000);
 	        // Wait for page load
 	        try {
 	            Thread.sleep(3000);
@@ -32,7 +32,7 @@ public class HellowWorld {
 	    }
 
 	    @Test
-	    public void loginTest() {
+	    public void loginTest() throws InterruptedException {
 	        // Find username field and enter value
 	        WebElement username = driver.findElement(By.name("username"));
 	        username.sendKeys("Admin");
@@ -44,6 +44,7 @@ public class HellowWorld {
 	        // Find login button and click
 	        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
 	        loginButton.click();
+	        Thread.sleep(3000);
 
 	        // Wait for dashboard to load
 	        try {
