@@ -3,8 +3,8 @@ name: Run Selenium Appium Tests
 on:
   push:
     branches:
-      - main  # or your working branch
-  workflow_dispatch:  # to manually trigger from GitHub Actions tab
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -14,12 +14,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '1.8'   # or 11 or whatever version you're using
+          java-version: '1.8'
 
       - name: Build and Run Tests
         run: |
           mvn clean test
+
+      - name: Upload TestNG Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestNG-Report
+          path: test-output/
