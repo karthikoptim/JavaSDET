@@ -24,11 +24,11 @@ public class HellowWorldTest {
 	        // Set ChromeDriver path if not added to system PATH
 	        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
-	    	Path tempProfile = Files.createTempDirectory("chrome-profile");
-	        ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--user-data-dir=" + tempProfile.toString());
+//	    	Path tempProfile = Files.createTempDirectory("chrome-profile");
+//	        ChromeOptions options = new ChromeOptions();
+//	        options.addArguments("--user-data-dir=" + tempProfile.toString());
 	        
-	        driver = new ChromeDriver(options);
+	        driver = new ChromeDriver();
 	        driver.manage().window().maximize();
 	        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	        Thread.sleep(10000);
