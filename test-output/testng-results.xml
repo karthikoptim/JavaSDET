@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-05T18:17:48 IST" name="Default suite" finished-at="2025-05-05T18:18:16 IST" duration-ms="28523">
+  <suite started-at="2025-05-05T20:03:32 IST" name="Default suite" finished-at="2025-05-05T20:03:57 IST" duration-ms="24651">
     <groups>
     </groups>
-    <test started-at="2025-05-05T18:17:48 IST" name="Default test" finished-at="2025-05-05T18:18:16 IST" duration-ms="28523">
+    <test started-at="2025-05-05T20:03:32 IST" name="Default test" finished-at="2025-05-05T20:03:57 IST" duration-ms="24651">
       <class name="JavaPractice.HellowWorldTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:JavaPractice.HellowWorldTest@50029372]" started-at="2025-05-05T18:17:48 IST" name="setup" finished-at="2025-05-05T18:18:09 IST" duration-ms="21784" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:JavaPractice.HellowWorldTest@6bb4dd34]" started-at="2025-05-05T20:03:32 IST" name="setup" finished-at="2025-05-05T20:03:50 IST" duration-ms="17944" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:0, instance:JavaPractice.HellowWorldTest@50029372]" started-at="2025-05-05T18:18:09 IST" name="loginTest" finished-at="2025-05-05T18:18:16 IST" duration-ms="6368" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:JavaPractice.HellowWorldTest@6bb4dd34]" started-at="2025-05-05T20:03:50 IST" name="loginTest" finished-at="2025-05-05T20:03:57 IST" duration-ms="6347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:JavaPractice.HellowWorldTest@50029372]" started-at="2025-05-05T18:18:16 IST" name="tearDown" finished-at="2025-05-05T18:18:16 IST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:JavaPractice.HellowWorldTest@6bb4dd34]" started-at="2025-05-05T20:03:57 IST" name="tearDown" finished-at="2025-05-05T20:03:57 IST" duration-ms="158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
