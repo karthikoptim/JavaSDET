@@ -35,13 +35,13 @@ public class HellowWorldTest {
 
 	        Path tempProfile = Files.createTempDirectory("profile_" + UUID.randomUUID());
 
-//	        ChromeOptions options = new ChromeOptions();
+	        ChromeOptions options = new ChromeOptions();
 //	        options.addArguments("--headless=new");
-//	        options.addArguments("--no-sandbox");
-//	        options.addArguments("--disable-dev-shm-usage");
-//	        options.addArguments("--user-data-dir=" + tempProfile.toString());
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--user-data-dir=" + tempProfile.toString());
 	        
-	        driver = new ChromeDriver();
+	        driver = new ChromeDriver(options);
 	        driver.manage().window().maximize();
 	        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	        Thread.sleep(10000);
