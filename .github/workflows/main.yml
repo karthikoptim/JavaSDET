@@ -1,4 +1,4 @@
-name: Run Selenium Appium Tests
+name: runSeliniumTest
 
 on:
   push:
