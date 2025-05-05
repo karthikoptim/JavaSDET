@@ -3,6 +3,7 @@ package JavaPractice;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.UUID;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HellowWorldTest {
 
@@ -27,8 +30,18 @@ public class HellowWorldTest {
 //	    	Path tempProfile = Files.createTempDirectory("chrome-profile");
 //	        ChromeOptions options = new ChromeOptions();
 //	        options.addArguments("--user-data-dir=" + tempProfile.toString());
+	    	
+	    	WebDriverManager.chromedriver().setup();
+
+	        Path tempProfile = Files.createTempDirectory("profile_" + UUID.randomUUID());
+
+	        ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--headless=new");
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--user-data-dir=" + tempProfile.toString());
 	        
-	        driver = new ChromeDriver();
+	        driver = new ChromeDriver(options);
 	        driver.manage().window().maximize();
 	        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	        Thread.sleep(10000);
