@@ -7,7 +7,7 @@ import JavaPractice.BaseTest;
 import JavaPractice.TestListener;
 import JavaPractice.LoginPage;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
     @Test
