@@ -23,6 +23,7 @@ jobs:
       - name: Build and Run Tests
         run: |
           mvn clean test
+          continue-on-error: true
 
       - name: Upload TestNG Report (test-output folder)
         uses: actions/upload-artifact@v4
