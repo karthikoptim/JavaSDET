@@ -62,7 +62,7 @@ public class ExtentReportExample {
 
         // Intentionally failing
         String title = driver.getTitle();
-     //   assert title.contains("Yahoo") : "Title doesn't match expected!";
+        assert title.contains("Yahoo") : "Title doesn't match expected!";
         driver.quit();
     }
 
