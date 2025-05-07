@@ -1,4 +1,4 @@
-package Tasks;
+package tasks;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -27,7 +27,13 @@ public class ExtentReportExample {
 
     @BeforeSuite
     public void setupReport() {
-    	ExtentSparkReporter sparkReporter = new ExtentSparkReporter("ExtentReport.html");
+    	//ExtentSparkReporter sparkReporter = new ExtentSparkReporter("extentReports/ExtentReport.html");
+    	// Generate timestamp
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String reportPath = "extentReports/ExtentReport_" + timestamp + ".html";
+
+        // Initialize Spark Reporter (use ExtentSparkReporter, not ExtentHtmlReporter for ExtentReports 5.x+)
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
     	sparkReporter.config().setDocumentTitle("Automation Report");
     	sparkReporter.config().setReportName("Test Execution Results");
     	sparkReporter.config().setTheme(Theme.STANDARD);
