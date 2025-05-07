@@ -7,6 +7,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -45,7 +46,15 @@ public class ExtentReportExample {
     @Test
     public void failingTest() {
         test = extent.createTest("Failing Test");
-        driver = new ChromeDriver();
+        
+        ChromeOptions options = new ChromeOptions();
+      options.addArguments("--headless=new");
+      options.addArguments("--no-sandbox");
+      options.addArguments("--disable-dev-shm-usage");
+     // options.addArguments("--user-data-dir=" + tempProfile.toString());
+        
+        
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://google.com");
 
