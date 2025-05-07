@@ -31,7 +31,7 @@ public class ExtentReportExample {
     	//ExtentSparkReporter sparkReporter = new ExtentSparkReporter("extentReports/ExtentReport.html");
     	// Generate timestamp
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String reportPath = "extentReports/ExtentReport_" + timestamp + ".html";
+        String reportPath = "ExtentReport_" + timestamp + ".html";
 
         // Initialize Spark Reporter (use ExtentSparkReporter, not ExtentHtmlReporter for ExtentReports 5.x+)
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
@@ -48,9 +48,9 @@ public class ExtentReportExample {
         test = extent.createTest("Failing Test");
         
         ChromeOptions options = new ChromeOptions();
-      options.addArguments("--headless=new");
-      options.addArguments("--no-sandbox");
-      options.addArguments("--disable-dev-shm-usage");
+//      options.addArguments("--headless=new");
+//      options.addArguments("--no-sandbox");
+//      options.addArguments("--disable-dev-shm-usage");
      // options.addArguments("--user-data-dir=" + tempProfile.toString());
         
         
