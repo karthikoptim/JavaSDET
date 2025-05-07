@@ -21,23 +21,34 @@ jobs:
           java-version: '11'
 
       - name: Build and Run Tests
+        id: run-tests
         run: |
           mvn clean test
+        continue-on-error: true
 
       - name: Upload TestNG Report (test-output folder)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: TestNG-Report
           path: test-output/
 
       - name: Upload TestNG Report (surefire-reports folder)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Surefire-Reports
           path: target/surefire-reports/
 
       - name: Upload ExtentReports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Extent-Reports
           path: extentReports
+
+      - name: Fail job if tests failed
+        if: steps.run-tests.outcome != 'success'
+        run: |
+          echo "Tests failed — marking job as failed."
+          exit 1
