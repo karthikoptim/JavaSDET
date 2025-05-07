@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Extent-Reports
-          path: ExtentReport*.html
+          path: '**/*Extent*.html'
 
       - name: Fail job if tests failed
         if: steps.run-tests.outcome != 'success'
