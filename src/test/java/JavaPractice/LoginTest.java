@@ -8,8 +8,12 @@ import JavaPractice.TestListener;
 import JavaPractice.LoginPage;
 
 //@Listeners(TestListener.class)
+<<<<<<< HEAD
 public class LoginTest {               
 	//extends BaseTest {
+=======
+public class LoginTest extends BaseTest {
+>>>>>>> 3d8265bdc3c1687f9df3f3e5a71965a746dce9bf
 
 //    @Test
    public void testLoginFailure() throws InterruptedException {
